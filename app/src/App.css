@@ -1,5 +1,5 @@
 body{
-  padding-top:100px;
+  padding-top:0px;
 }
 
 img{
@@ -8,4 +8,14 @@ img{
 
 h4{
   positoin:relative;
+}
+
+.search-bar{
+  height:50px;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:99;
+  background-color:#fff;
+  padding:10px 0 0 0;
 }

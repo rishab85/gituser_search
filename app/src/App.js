@@ -24,11 +24,13 @@ constructor(props){
     if(name==='next'){
       if(active<last)
       this.props.setActive(this.props.isActive+1)
+      window.scrollBy(0,111);
     }
 
     if(name==='prev'){
       if(active>0){
         this.props.setActive(active-1)
+        window.scrollBy(0,-111);
       }
     }
   }
@@ -37,18 +39,18 @@ constructor(props){
     console.log(this.props.isActive);
     return (
       <div className="container">
-        <div className="row">
+        <div className="row search-bar">
           <div className="col-lg-2">
-          
+
           </div>
           <div className="col-lg-8">
               <div className="input-group">
-                <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button" name="prev" onClick={this.handleClick}>Prev</button>
+                <span className="input-group-btn">
+                    <button className="btn btn-secondary" type="button" name="prev" onClick={this.handleClick}>Prev</button>
                 </span>
               <input type="text" onChange={this.handleChange} className="form-control" placeholder="Search for..." />
-                <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button" name="next" onClick={this.handleClick}>Next</button>
+                <span className="input-group-btn">
+                    <button className="btn btn-secondary" type="button" name="next" onClick={this.handleClick}>Next</button>
                 </span>
 
               </div>
@@ -56,7 +58,7 @@ constructor(props){
           <div className="col-lg-2"></div>
         </div>
 
-          <div className="row">
+          <div className="row" style={{marginTop:'40px'}}>
             <div className="col-lg-2"></div>
             <div className="col-lg-8">
               <ul className="list-group">
