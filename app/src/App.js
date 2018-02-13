@@ -7,27 +7,29 @@ class App extends Component {
 
 constructor(props){
   super(props);
-  this.handleChange = this.handleChange.bind(this);
-  this.handleClick = this.handleClick.bind(this);
+
+
 }
 
-  handleChange(event){
+  handleChange = (event) => {
     const url= 'https://api.github.com/search/users?q='+ event.target.value;
     this.props.fetchData(url);
   }
 
-  handleClick(event){
+  handleClick = (event) =>{
+    console.log('helo');
     const name = event.target.name;
     let last = this.props.items.length-1;
     let active = this.props.isActive;
     console.log(this.props.isActive);
-    if(name==='next'){
-      if(active<last)
-      this.props.setActive(this.props.isActive+1)
-      window.scrollBy(0,111);
+    if(name==='next' || event.key==="ArrowDown"){
+      if(active<last){
+        this.props.setActive(this.props.isActive+1)
+        window.scrollBy(0,111);
+      }
     }
 
-    if(name==='prev'){
+    if(name==='prev' || event.key=="ArrowUp"){
       if(active>0){
         this.props.setActive(active-1)
         window.scrollBy(0,-111);
@@ -46,9 +48,9 @@ constructor(props){
           <div className="col-lg-8">
               <div className="input-group">
                 <span className="input-group-btn">
-                    <button className="btn btn-secondary" type="button" name="prev" onClick={this.handleClick}>Prev</button>
+                    <button className="btn btn-secondary" type="button" name="prev" onClick={this.handleClick} >Prev</button>
                 </span>
-              <input type="text" onChange={this.handleChange} className="form-control" placeholder="Search for..." />
+              <input type="text" onChange={this.handleChange} onKeyDown={this.handleClick} className="form-control" placeholder="Search for..." />
                 <span className="input-group-btn">
                     <button className="btn btn-secondary" type="button" name="next" onClick={this.handleClick}>Next</button>
                 </span>
