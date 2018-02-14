@@ -19,3 +19,18 @@ h4{
   background-color:#fff;
   padding:10px 0 0 0;
 }
+
+.navigation{
+  height:100vh;
+  position:fixed;
+  left:0;
+  background-color:grey;
+}
+
+.navigation ul{
+  margin-top:100px;
+}
+
+.navigation ul li{
+  color:#ffffff;
+}

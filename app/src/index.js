@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import configureStore from './config'
 import './index.css';
 import App from './App';
+import Header from './components/header.js';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore();
